@@ -1,0 +1,19 @@
+- name: update and upgrade (Debian)
+  shell: apt update -y
+  when: ansible_distribution == "Debian"
+
+- name: update and upgrade Centos)
+  shell: yum update -y
+  when: ansible_distribution == "CentOS"
+
+- name: Install Git
+  apt: name=git,php7.4,php7.4-mysql,libapache2-mod-php7.4 state=present
+  when: ansible_distribution == "Debian"
+
+#- name: Open MySQL Port to ubuntu
+#  when: ansible_distribution == "CentOS"
+#  command: firewall-cmd --permanent --zone=public --add-port=3306/tcp
+#
+#- name: Reload Firewall
+#  when: ansible_distribution == "CentOS"
+#  command: firewall-cmd --reload

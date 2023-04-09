@@ -1,0 +1,17 @@
+# Ignore Terraform files
+*.tfstate
+*.tfstate.backup
+*.tfplan
+
+# Ignore .terraform directory
+**/.terraform/*
+
+# Ignore specific files in the Aws_infrastructure directory
+#Aws_infrastructure/aws_kljuc.pem
+
+## Ignore specific files in the Php-CRUD-app-for-ansible directory
+#Php-CRUD-app-for-ansible/sshpass.rb
+#Php-CRUD-app-for-ansible/ansible_aws_key.pem
+
+# Ignore .idea folder
+.idea/

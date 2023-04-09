@@ -1,0 +1,43 @@
+- name: Create a Database User
+  when: ansible_distribution == "CentOS"
+  mysql_user:
+    name: ilija
+    password: ilija123
+    state: present
+    login_user: ilija
+    login_password: ilija123
+
+- name: Create a New Database
+  when: ansible_distribution == "CentOS"
+  mysql_db:
+    name: secondopinion
+    login_user: ilija
+    login_password: ilija123
+
+- name: Create Table - Customer
+  when: ansible_distribution == "CentOS"
+  community.mysql.mysql_query:
+    login_user: ilija
+    login_password: ilija123
+    login_db: secondopinion
+    query: CREATE TABLE `customer` (
+        `id` int(11) NOT NULL,
+        `email` varchar(255) NOT NULL,
+        `password` varchar(255) NOT NULL,
+        `last_name` varchar(255) DEFAULT NULL,
+        `first_name` varchar(255) DEFAULT NULL,
+        `gender` varchar(256) NOT NULL
+      );
+
+- name: Create Table - Conversation
+  when: ansible_distribution == "CentOS"
+  community.mysql.mysql_query:
+    login_db: secondopinion
+    login_user: ilija
+    login_password: ilija123
+    query: CREATE TABLE `conversation` (
+        `id` int(11) UNSIGNED NOT NULL,
+        `senderEmail` varchar(256) DEFAULT NULL,
+        `receiverEmail` varchar(256) DEFAULT NULL,
+        `message` mediumtext
+      );

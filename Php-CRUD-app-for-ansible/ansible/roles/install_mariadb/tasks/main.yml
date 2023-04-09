@@ -1,0 +1,10 @@
+- name: Install MariaDB
+  when: ansible_distribution == "CentOS"
+  yum: name=mariadb-server,MySQL-python state=latest
+
+- name: Start MariaDB
+  when: ansible_distribution == "CentOS"
+  service: 
+    name: mariadb
+    enabled: true
+    state: started

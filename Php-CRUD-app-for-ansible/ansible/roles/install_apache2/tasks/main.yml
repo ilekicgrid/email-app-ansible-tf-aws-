@@ -1,0 +1,3 @@
+- name: Install Latest Version of Apache
+  shell: apt install apache2 -y
+  when: ansible_distribution == "Ubuntu"

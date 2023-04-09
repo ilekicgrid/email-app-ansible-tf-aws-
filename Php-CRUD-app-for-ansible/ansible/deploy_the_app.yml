@@ -1,0 +1,18 @@
+---
+
+# Run it /// ansible-playbook -i inventory/hosts.yml deploy_the_app.yml -vv \\\
+- name: Deploy the app
+  hosts: all
+  become: true
+  become_user: root
+  gather_facts: yes
+  roles:
+    - installing_prerequisites
+    - install_apache2
+    - install_mariadb
+    - apply_migrations
+    - deploy_the_project
+
+# IP of debian: 192:168:56:105  --- web server
+# IP of centos: 192.168.56.104  --- database
+# for direct ssh do: /// ssh-copy-id USER@HOST \\\
