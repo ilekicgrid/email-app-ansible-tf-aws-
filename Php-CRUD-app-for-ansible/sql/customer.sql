@@ -43,9 +43,9 @@ CREATE TABLE `customer` (
 
 INSERT INTO `customer` (`id`, `email`, `password`, `last_name`, `first_name`, `gender`) VALUES
 (4, 'yokibtc@gmail.com', 'djole123', 'Janev', 'Djordje', 'male'),
-(2, 'katic.ilija.katic@gmail.com', 'katic1234', 'Katic', 'Ilija', 'male'),
-(5, 'ilijaxx1x@gmail.com', '123456789', 'Katic', 'Ilija', 'male'),
-(3, 'katic.s.nikola@gmail.com', 'nikola123', 'Katic', 'Nikola', 'male');
+(2, 'lekic.ilija.katic@gmail.com', 'lekic1234', 'Lekic', 'Ilija', 'male'),
+(5, 'ilijaxx1x@gmail.com', '123456789', 'lekic', 'Ilija', 'male'),
+(3, 'lekic.s.nikola@gmail.com', 'nikola123', 'lekic', 'Nikola', 'male');
 
 --
 -- Indexes for dumped tables
